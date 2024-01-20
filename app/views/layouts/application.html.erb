@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-brand navbar-primary">
+      <i class="m-3 fa-solid fa-film"></i>
+      <div>
+        <%= link_to "My Lists", lists_path %>
+        <%= link_to "Create new List", new_list_path %>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

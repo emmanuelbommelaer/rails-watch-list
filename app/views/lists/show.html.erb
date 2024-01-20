@@ -1,0 +1,7 @@
+<h1><%= @list.name %></h1>
+<p>
+  <% @list.bookmarks.each do |b| %>
+    <%= b.movie.title %>
+  <% end %>
+</p>
+
