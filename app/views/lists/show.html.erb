@@ -1,7 +1,18 @@
-<h1><%= @list.name %></h1>
-<p>
-  <% @list.bookmarks.each do |b| %>
-    <%= b.movie.title %>
-  <% end %>
-</p>
+<h1 class="mb-4"><%= @list.name.capitalize %></h1>
+<% @list.bookmarks.each do |b| %>
+  <div class="d-flex justify-content-between w-50">
+    <div>
+      <h3><%= b.movie.title %></h3>
+      <p><%= b.comment %></p>
+    </div>
+    <div>
+      <%= link_to "Delete this bookmark",
+        destroy_bookmark_path(b), method: :delete
+        # data: { turbo_method: :delete }
+      %>
+    </div>
+  </div>
+<% end %>
 
+<h2>Add a bookmark to this List:</h2>
+<%= render "bookmarks/new" %>
